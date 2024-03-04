@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche YouTube</title>
+    <style>
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .video-item {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recherche YouTube</h1>
+    <form id="search-form">
+        <input type="text" id="query" placeholder="Entrez votre recherche">
+        <button type="submit">Rechercher</button>
+    </form>
+    <div id="videos" class="video-container"></div>
+    <button id="prev-page" style="display: none;">Page précédente</button>
+    <button id="next-page" style="display: none;">Page suivante</button>
+
+    <script>
+        let nextPageToken = '';
+        let prevPageToken = '';
+
+        const searchForm = document.getElementById('search-form');
+        const videosContainer = document.getElementById('videos');
+        const prevPageButton = document.getElementById('prev-page');
+        const nextPageButton = document.getElementById('next-page');
+
+        searchForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const query = document.getElementById('query').value;
+            if (query.trim() === '') {
+                alert('Veuillez entrer une recherche');
+                return;
+            }
+            nextPageToken = '';
+            prevPageToken = '';
+            await search(query);
+        });
+
+        async function search(query) {
+            const url = `/search?query=${query}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            if (response.ok) {
+                displayResults(data);
+            } else {
+                alert(data.error || 'Une erreur s\'est produite lors de la recherche');
+            }
+        }
+
+        function displayResults(data) {
+            const videos = data.youtube_results;
+            videosContainer.innerHTML = '';
+            videos.forEach(video => {
+                const videoItem = document.createElement('div');
+                videoItem.classList.add('video-item');
+                videoItem.innerHTML = `
+                    <h3>${video.title}</h3>
+                    <a href="${video.url}" target="_blank">
+                        <img src="${video.thumbnail}" alt="${video.title}" width="120" height="90">
+                    </a>
+                `;
+                videosContainer.appendChild(videoItem);
+            });
+            nextPageToken = data.nextPageToken;
+            prevPageToken = data.prevPageToken;
+            updatePaginationButtons();
+        }
+
+        prevPageButton.addEventListener('click', async function() {
+            if (prevPageToken) {
+                await searchWithPageToken(prevPageToken);
+            }
+        });
+
+        nextPageButton.addEventListener('click', async function() {
+            if (nextPageToken) {
+                await searchWithPageToken(nextPageToken);
+            }
+        });
+
+        async function searchWithPageToken(pageToken) {
+            const query = document.getElementById('query').value;
+            await search(`${query}&pageToken=${pageToken}`);
+        }
+
+        function updatePaginationButtons() {
+            prevPageButton.style.display = prevPageToken ? 'block' : 'none';
+            nextPageButton.style.display = nextPageToken ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
