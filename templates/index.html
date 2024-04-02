@@ -16,7 +16,7 @@
 </head>
 <body>
     <h1>Recherche YouTube</h1>
-    <form id="search-form">
+    <form id="search-form" onsubmit="search(); return false;">
         <input type="text" id="query" placeholder="Entrez votre recherche">
         <button type="submit">Rechercher</button>
     </form>
@@ -46,15 +46,19 @@
         });
 
         async function search(query) {
-            const url = `/search?query=${query}`;
-            const response = await fetch(url);
-            const data = await response.json();
-            if (response.ok) {
-                displayResults(data);
-            } else {
-                alert(data.error || 'Une erreur s\'est produite lors de la recherche');
-            }
+        let url = `/search?query=${query}`;
+        if (nextPageToken) {
+            url += `&pageToken=${nextPageToken}`;
         }
+        const response = await fetch(url);
+        const data = await response.json();
+        if (response.ok) {
+            displayResults(data);
+        } else {
+            alert(data.error || 'Une erreur s\'est produite lors de la recherche');
+        }
+    }
+
 
         function displayResults(data) {
             const videos = data.youtube_results;
@@ -88,9 +92,10 @@
         });
 
         async function searchWithPageToken(pageToken) {
-            const query = document.getElementById('query').value;
-            await search(`${query}&pageToken=${pageToken}`);
+        const query = document.getElementById('query').value;
+        await search(`${query}&pageToken=${pageToken}`);
         }
+
 
         function updatePaginationButtons() {
             prevPageButton.style.display = prevPageToken ? 'block' : 'none';

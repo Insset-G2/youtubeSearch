@@ -62,4 +62,5 @@ def search():
 
 if __name__ == '__main__':
     # Exécute l'application Flask en mode debug lorsqu'elle est exécutée directement
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+

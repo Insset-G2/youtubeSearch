@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "nice-particle-416210",
+  "private_key_id": "f617cc507675056ee4393b4e660d467e4ec69480",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2khAEfoTcCec9\nK5ES+hbIsHipcyoDKOjGrj/zUnEQiOMMZTujWVsNrqAyJZtdyHQOo39/A1Cmmf+J\nRojtvLUFdDH4oWfCEZzV5BoDQZzSm63LwxleGSR7qVd2lbxg5HwvQU7zSZ60RhdW\nD4F+4wzjlzlw3L141i4Lh7KYMPRmrNbpSzqNmY4Q2djW3P1KTzW0ku31yNo+pqLe\nZ0MRwjQD0e8vE1P5VI7ncf9Rm2Qgm6pXCqcUoHCL/6c8vhYVcHgljK5VwAPRkqAr\noa9wUrIthoBbsaNuhw6XzXeAAHJMSiArs6vF6vDKeFyVYrzTRvqYFigYIb+vB+oD\nMxiWuoTxAgMBAAECggEAAtArBVlfubZAr71xSFNohiIgpy0aRh8wwF2kqElVFatO\nTagXrFOEUX3R2RlMP2cx0UdCqoCGEx3HWrmmrXxyu56dOywILxeEt6UCo5nfYpK5\n3FcUF9JCW3zHV2aaQadI+eoYidYmEbgMxFY2fsUyiHqRjNl8j+qY814yvyFDUCZY\noXN6fgUOOc6aWxGyJ59L1cfysN7NrDQHTXURjudyG9ckWxFbDTD29ToIfBJoqH3P\nzbFZpdEntwFMmbQphPRqtTyLTWa1BkeYpuKUNVHESsHpevX8RfMLsZxtSRODGeex\nz1hDtZQ3nUEl57jOGZ1rATiazhHwg8FUwMfoU5CzAQKBgQDoN32L3rCb0AGfQ+kD\n7O3Odam2Z4mtlUYpDc3rH9YTkn2T5RKpEAH431x9f/gAOxIr+S1tVr3lhZVMRQrc\nDx57p9n1zw+SQg7QBIpSBmJmYAsvhxya4DxOZiUmpIJAtZ+2EU/QU+Qugt33M4nP\nHZYBcScUCgGvtFyLjCMPEHoIkQKBgQDJROT6JPKaEVAtUd+CjulLQYBFq93GSQkO\ngBnTU090vux0FF/fHzskHbgJP+YL6aSg7U9twLk2m9q3fze2TE3uYerc4EJl5xIs\nutPS5d4kYEuNyfGL45nPBtOQp+nOBgHR54AxrXNA1EZ8p0FKuZLm/bYTKnTBLHAs\nSNdktZvmYQKBgQDWak5ZNPD7nc+xoEHqpv1ZclmXG/kLN1cGF0H4hXfksJGVWqGl\nSyuXAZ7kHqH+jIyV38lrOPm0kWiueN2zHZ627OCbUGp/UNFej6KsZEq9XpdVdjsa\nYkws07IgASxn1Yw3z7pTkPKTY7DSTVtEy3uzryg3H5o5A5+kFmxUv5D+kQKBgFB6\nQMiYz3y1YYbNjv6oYDZcOYsiPqpTd9CZfjoWvNWkpe2AXBleZop5a6YfK8Alq1NB\nsJnlDun8BceLkd5NwneIJZ4t+b6/V3AVQC+7BEktS+ilD/Vsi4rRYvUbfwyHMGEb\nHRJAFa6dcpXTVvMnIstENXKSbl7zguLiOWYmi/DhAoGBALHzceEFfZKY/3No/Ov3\nHm5Z9pF2ichyTcPN+xRbBdeTKUIIhas7Ik/jel8eqEtWOhoKmWukB1qvw8LfgcKs\neSrq/zyMs7HzlCMGx22r/UJkzELHAeekDiv1vySNohezQLOinKRESRrazf2DDSlv\n7MeFKB/iClj/ShBTVnzCG/ER\n-----END PRIVATE KEY-----\n",
+  "client_email": "github-actions@nice-particle-416210.iam.gserviceaccount.com",
+  "client_id": "101184385298370740382",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/github-actions%40nice-particle-416210.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
