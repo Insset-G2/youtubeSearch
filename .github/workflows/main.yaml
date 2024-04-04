@@ -27,6 +27,5 @@ jobs:
         run: |
           gcloud auth configure-docker europe-west1.pkg.dev --quiet
           docker build -t europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch:latest .
-          docker push europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch:latest
 
 
