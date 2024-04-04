@@ -16,6 +16,9 @@ jobs:
         uses: google-github-actions/setup-gcloud@v0
         with:
           version: latest
+          project_id: nice-particle-416210
+          service_account_key: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+          export_default_credentials: true
 
       - name: Authenticate to Google Cloud
         run: gcloud auth configure-docker
