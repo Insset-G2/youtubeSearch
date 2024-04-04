@@ -9,4 +9,3 @@ steps:
       - '--region=europe-west1'
       - '--allow-unauthenticated' # Allow unauthenticated access
       - '--port=5000' # Specify the container port  
-
