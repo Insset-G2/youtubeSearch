@@ -24,7 +24,7 @@ jobs:
         run: gcloud auth configure-docker
 
       - name: Build the Docker image
-        run: docker build -t gcr.io/nice-particle-416210/youtubesearch/ddb5716d00c9 .
+        run: docker build -t europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch/ddb5716d00c9 .
 
       - name: Push the Docker image to Artifact Registry
-        run: docker push gcr.io/nice-particle-416210/youtubesearch/ddb5716d00c9/ 
+        run: docker push europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch/ddb5716d00c9/ 
