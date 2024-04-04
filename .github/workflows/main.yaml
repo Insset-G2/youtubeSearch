@@ -15,7 +15,7 @@ jobs:
 
 
       - name: install the gcloud cli
-        uses: google-github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@v1
         with:
           project_id: nice-particle-416210
           service_account_key: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
