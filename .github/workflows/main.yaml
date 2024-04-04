@@ -15,7 +15,7 @@ jobs:
 
 
       - name: install the gcloud cli
-        uses: google-github-actions/setup-gcloud@v1
+        uses: google-github-actions/setup-gcloud@master
         with:
           project_id: nice-particle-416210
           service_account_key: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
@@ -23,9 +23,9 @@ jobs:
 
       - name: build and push the docker image
         env:
-          GOOGLE_PROJECT: nice-particle-416210}
+          GOOGLE_PROJECT: nice-particle-416210
         run: |
-          gcloud auth configure-docker europe-west1.pkg.dev
+          gcloud auth configure-docker europe-west1.pkg.dev --quiet
           docker build -t europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch:latest .
           docker push europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch:latest
 
