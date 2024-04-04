@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t nice-particle-416210.eu.gcr.io/ddb5716d00c9ad55bf301b2b9ebb02f737d5ac9fa1a0f3d6aac06fba5d72f33d:${GITHUB_SHA} .
+          docker build -t nice-particle-416210.eu.gcr.io/36aff5d3171917b89cdc4c9e8dcb1212d4f8b7bbdd3a62533a5c5ccd3a129470:${GITHUB_SHA} .
 
       - name: Set up GCP CLI
         uses: google-github-actions/setup-gcloud@v1
