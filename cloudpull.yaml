@@ -7,5 +7,5 @@ steps:
       - '--image=europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest'
       - '--platform=managed'
       - '--region=europe-west1'
-      - '--allow-unauthenticated' # Allow unauthenticated access
+      - '--allow-unauthenticated' # Allow unauthenticated access everyone
       - '--port=5000' # Specify the container port  
