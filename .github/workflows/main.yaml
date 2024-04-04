@@ -13,19 +13,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-
-      - name: install the gcloud cli
+      - name: Install the gcloud CLI
         uses: google-github-actions/setup-gcloud@v1
         with:
           project_id: nice-particle-416210
           service_account_key: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
           export_default_credentials: true
 
-      - name: build and push the docker image
+      - name: Build and push the Docker image
         env:
-          GOOGLE_PROJECT: nice-particle-416210
+          PROJECT_ID: nice-particle-416210
         run: |
           gcloud auth configure-docker europe-west1-docker.pkg.dev
-          docker build -t europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch .
-
-
+          docker build -t europe-west1-docker.pkg.dev/nice-particle-416210/ddb5716d00c9ad55bf301b2b9ebb02f737d5ac9fa1a0f3d6aac06fba5d72f33d .
+          docker push europe-west1-docker.pkg.dev/nice-particle-416210/ddb5716d00c9ad55bf301b2b9ebb02f737d5ac9fa1a0f3d6aac06fba5d72f33d
