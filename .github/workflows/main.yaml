@@ -26,5 +26,5 @@ jobs:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: |
           gcloud auth configure-docker europe-west1.pkg.dev
-          docker build -t europe-west1.pkg.dev/$GOOGLE_PROJECT/youtubesearch/youtubesearch:latest .
-          docker push europe-west1.pkg.dev/$GOOGLE_PROJECT/youtubesearch/youtubesearch:latest
+          docker build -t europe-west1.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest .
+          docker push europe-west1.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest
