@@ -6,4 +6,3 @@ steps:
   # Docker push to Google Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest']
-

@@ -1,0 +1,11 @@
+# Deploy to Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'youtubesearch'
+      - '--image=europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest:${SHORT_SHA}'
+      - '--platform=managed'
+      - '--region=europe-west1'
+      - '--allow-unauthenticated' # Allow unauthenticated access
+      - '--port=5000' # Specify the container port
