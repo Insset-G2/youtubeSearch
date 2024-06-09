@@ -1,0 +1,99 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "YouTube Search API",
+    "description": "API pour rechercher des vidéos YouTube",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5050"
+    }
+  ],
+  "paths": {
+    "/search": {
+      "get": {
+        "summary": "Rechercher des vidéos YouTube",
+        "description": "Rechercher des vidéos YouTube basées sur une requête donnée",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "description": "Le terme de recherche",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "required": false,
+            "description": "Jeton de la page pour la pagination",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succès",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "youtube_results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "url": {
+                            "type": "string",
+                            "description": "URL de la vidéo YouTube"
+                          },
+                          "thumbnail": {
+                            "type": "string",
+                            "description": "URL de la vignette de la vidéo"
+                          },
+                          "title": {
+                            "type": "string",
+                            "description": "Titre de la vidéo"
+                          }
+                        }
+                      }
+                    },
+                    "nextPageToken": {
+                      "type": "string",
+                      "description": "Jeton pour la page suivante"
+                    },
+                    "prevPageToken": {
+                      "type": "string",
+                      "description": "Jeton pour la page précédente"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requête invalide",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Message d'erreur"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
