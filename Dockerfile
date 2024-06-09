@@ -13,7 +13,7 @@ COPY templates templates
 RUN pip install --no-cache-dir Flask google-api-python-client
 
 # Exposez le port sur lequel l'application Flask fonctionne
-EXPOSE 5000
+EXPOSE 5016
 
 # Commande pour exécuter l'application Flask lorsque le conteneur démarre
 CMD ["python", "youtube.py"]

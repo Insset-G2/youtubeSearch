@@ -3,6 +3,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest', .]
 
-  # Docker push to Google Artifact Registry r
+  # Docker push to Google Artifact Registry rs
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest']
