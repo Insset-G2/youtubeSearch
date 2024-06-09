@@ -8,13 +8,13 @@ WORKDIR /app
 COPY requirements.txt .
 COPY youtube.py .
 COPY templates templates
+COPY static static
 
 # Installez les dépendances Python
-RUN pip install --no-cache-dir Flask google-api-python-client
+RUN pip install --no-cache-dir Flask google-api-python-client flask-swagger-ui
 
 # Exposez le port sur lequel l'application Flask fonctionne
 EXPOSE 5016
 
 # Commande pour exécuter l'application Flask lorsque le conteneur démarre
 CMD ["python", "youtube.py"]
-
