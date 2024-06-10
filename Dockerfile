@@ -10,6 +10,8 @@ COPY youtube.py .
 COPY templates templates
 COPY static static
 
+COPY . .
+
 # Installez les dépendances Python
 RUN pip install --no-cache-dir -r requirements.txt
 
