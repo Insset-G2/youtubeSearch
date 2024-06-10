@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +15,7 @@
     </style>
 </head>
 <body>
-
-    <h1>Recherche YouTube </h1>
+    <h1>Recherche YouTube</h1>
     <form id="search-form" onsubmit="search(); return false;">
         <input type="text" id="query" placeholder="Entrez votre recherche">
         <button type="submit">Rechercher</button>
@@ -24,16 +23,13 @@
     <div id="videos" class="video-container"></div>
     <button id="prev-page" style="display: none;">Page précédente</button>
     <button id="next-page" style="display: none;">Page suivante</button>
-
     <script>
         let nextPageToken = '';
         let prevPageToken = '';
-
         const searchForm = document.getElementById('search-form');
         const videosContainer = document.getElementById('videos');
         const prevPageButton = document.getElementById('prev-page');
         const nextPageButton = document.getElementById('next-page');
-
         searchForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             const query = document.getElementById('query').value;
@@ -45,21 +41,19 @@
             prevPageToken = '';
             await search(query);
         });
-
         async function search(query) {
-            let url = `/search?query=${query}`;
-            if (nextPageToken) {
-                url += `&pageToken=${nextPageToken}`;
-            }
-            const response = await fetch(url);
-            const data = await response.json();
-            if (response.ok) {
-                displayResults(data);
-            } else {
-                alert(data.error || 'Une erreur s\'est produite lors de la recherche');
-            }
+        let url = `/search?query=${query}`;
+        if (nextPageToken) {
+            url += `&pageToken=${nextPageToken}`;
         }
-
+        const response = await fetch(url);
+        const data = await response.json();
+        if (response.ok) {
+            displayResults(data);
+        } else {
+            alert(data.error || 'Une erreur s\'est produite lors de la recherche');
+        }
+    }
         function displayResults(data) {
             const videos = data.youtube_results;
             videosContainer.innerHTML = '';
@@ -78,24 +72,20 @@
             prevPageToken = data.prevPageToken;
             updatePaginationButtons();
         }
-
         prevPageButton.addEventListener('click', async function() {
             if (prevPageToken) {
                 await searchWithPageToken(prevPageToken);
             }
         });
-
         nextPageButton.addEventListener('click', async function() {
             if (nextPageToken) {
                 await searchWithPageToken(nextPageToken);
             }
         });
-
         async function searchWithPageToken(pageToken) {
-            const query = document.getElementById('query').value;
-            await search(`${query}&pageToken=${pageToken}`);
+        const query = document.getElementById('query').value;
+        await search(`${query}&pageToken=${pageToken}`);
         }
-
         function updatePaginationButtons() {
             prevPageButton.style.display = prevPageToken ? 'block' : 'none';
             nextPageButton.style.display = nextPageToken ? 'block' : 'none';
