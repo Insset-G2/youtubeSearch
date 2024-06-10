@@ -27,4 +27,4 @@ jobs:
 
     - name: Deploy to Google Cloud Run
       run: |
-        gcloud run deploy youtubesearch --image=europe-west1.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest --platform=managed --region=europe-west1 --allow-unauthenticated --port=5016
+        gcloud run deploy youtubesearch --image=europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest --platform=managed --region=europe-west1 --allow-unauthenticated --port=5016
