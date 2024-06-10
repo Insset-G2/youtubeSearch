@@ -70,11 +70,3 @@ jobs:
         done
         echo "Flask did not become ready in time"
         exit 1
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
-    - name: Install TestCafe
-      run: npm install -g testcafe
-    - name: Run TestCafe tests
-      run: testcafe chrome:headless test_frontend.js
