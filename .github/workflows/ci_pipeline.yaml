@@ -33,7 +33,7 @@ jobs:
         username: _json_key
         password: ${{ secrets.GCR_JSON_KEY }}
     - name: Build Docker image
-      run: docker build -t europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest searchyoutube
+      run: docker build -t europe-west1-docker.pkg.dev/nice-particle-416210/youtubesearch/youtubesearch:latest
     - name: Scan Docker image with Trivy
       uses: aquasecurity/trivy-action@master
       with:
