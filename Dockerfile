@@ -8,7 +8,7 @@ WORKDIR /app
 COPY requirements.txt .
 COPY youtube.py .
 COPY templates templates
-COPY static static
+#COPY static static
 
 # Installez les dépendances Python
 RUN pip install --no-cache-dir -r requirements.txt
