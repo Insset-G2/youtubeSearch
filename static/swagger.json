@@ -5,11 +5,7 @@
     "description": "API pour rechercher des vidéos YouTube",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "http://localhost:5050"
-    }
-  ],
+  "basePath": "/",
   "paths": {
     "/search": {
       "get": {
