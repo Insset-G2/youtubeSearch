@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.0",
+  "swagger": "2.0",
   "info": {
     "title": "YouTube Search API",
     "description": "API pour rechercher des vidéos YouTube",
