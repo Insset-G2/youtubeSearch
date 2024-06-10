@@ -1,4 +1,3 @@
 Flask
 google-api-python-client
-google_api_python_client
 flask-swagger-ui
