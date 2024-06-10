@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,19 +47,18 @@
         });
 
         async function search(query) {
-        let url = `/search?query=${query}`;
-        if (nextPageToken) {
-            url += `&pageToken=${nextPageToken}`;
+            let url = `/search?query=${query}`;
+            if (nextPageToken) {
+                url += `&pageToken=${nextPageToken}`;
+            }
+            const response = await fetch(url);
+            const data = await response.json();
+            if (response.ok) {
+                displayResults(data);
+            } else {
+                alert(data.error || 'Une erreur s\'est produite lors de la recherche');
+            }
         }
-        const response = await fetch(url);
-        const data = await response.json();
-        if (response.ok) {
-            displayResults(data);
-        } else {
-            alert(data.error || 'Une erreur s\'est produite lors de la recherche');
-        }
-    }
-
 
         function displayResults(data) {
             const videos = data.youtube_results;
@@ -93,10 +92,9 @@
         });
 
         async function searchWithPageToken(pageToken) {
-        const query = document.getElementById('query').value;
-        await search(`${query}&pageToken=${pageToken}`);
+            const query = document.getElementById('query').value;
+            await search(`${query}&pageToken=${pageToken}`);
         }
-
 
         function updatePaginationButtons() {
             prevPageButton.style.display = prevPageToken ? 'block' : 'none';
